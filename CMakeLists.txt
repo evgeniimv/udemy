@@ -10,4 +10,5 @@ add_executable(udemy main.cpp
         pointer/3_pointer_casting.cpp
         pointer/4_pointer_generic.cpp
         pointer/5_pointer_to_pointer.cpp
-        pointer/6_pointer_in_function_args.cpp)
+        pointer/6_pointer_in_function_args.cpp
+        pointer/7_pointer_arrays.cpp)
