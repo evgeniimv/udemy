@@ -45,4 +45,8 @@ int main(int argc, char *argv[]) {
   // information about number.
   // when we get address p, it basically returns 200.
   // when we get value if p, or *p, it looks at all 4 bytes and returns decimal value.
+
+  // POINTER SIZE DEPENDS ONLY OF MACHINE ARCHITECTURE
+  // 4 bytes in 32bit architecture
+  // 8 bytes in 64bit
 }

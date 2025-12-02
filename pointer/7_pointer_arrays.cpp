@@ -18,6 +18,10 @@
 
 #include <cstdio>
 
+int size_of(int A[]) {
+    printf("%d\n", sizeof(A));
+}
+
 int main(int argc, char *argv[]) {
     int A[] = {1, 2, 3, 4, 5};
     printf("%d\n", A); // returns address of a 1st element in an array
@@ -38,4 +42,26 @@ int main(int argc, char *argv[]) {
         // or
         printf("%d\n", A + i);
     }
+
+
+    // When we use sizeof on an array:
+    printf("%d\n", sizeof(A)); // 20 (5*4)
+    // Arrays do not decay to pointers when used with sizeof.
+    // So sizeof(arr) = size of entire array in bytes.
+
+    // When we use sizeof on an array as a function argument
+    size_of(A); // 8
+    // declared array argument becomes a pointer and sizeof returns size of a pointer
+
+    // the reason behind it is that when we write a function with arguments like
+    /**
+     * int some_function(int A[]){...} compiler automatically rewrites it to
+     * int some_function(int* A){...} so argument becomes a pointer
+     */
+    // arrays as a function arguments cannot be treated as a real arrays, and they are always pointers.
+
+    // but for real arrays this is different, for real arrays they can behave as pointers when its needed,
+    // its called 'array-to-pointer decay' when arrays automatically converted to pointers, and it can be done
+    // in most expressions
+    return 0;
 }
