@@ -2,20 +2,24 @@
 // Created by mdgon on 11/19/2025.
 //
 #include <iostream>
+#include <ostream>
+
 using namespace std;
 
 int main(int argc, char *argv[]) {
     int a; // creating int variable (allocating 4 bytes)
     int *p; // creating int type pointer variable (allocating memory)
+    int *p_null;
 
     a = 5; // writing value 5 into allocated memory
     p = &a; // writing address of variable `a` into pointer allocated memory
 
-    int b = *p; // dereferencing - reading data from targeted by pointer memory
+    int b = *p; // dereferencing(разыменывАние) - reading data from targeted by pointer memory
 
     cout << b << endl;
     cout << a << endl;
-    cout << p << endl;
+    // cout << p << endl;
+    printf("%d\n", p);
     cout << &a << endl;
     cout << &p << endl;
 

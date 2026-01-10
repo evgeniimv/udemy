@@ -14,5 +14,5 @@ int main(int argc, char *argv[]) {
     // since pointer type is integer and integer allocates 4 bytes, incrementing pointer by 1 means
     // jumping to the next allocated integer or current address + 4
     // when we change address tto p+1 we basically jump to potentially not allocated address
-    // or allocated by some other obbject
+    // or allocated by some other object
 }

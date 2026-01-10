@@ -17,9 +17,10 @@
  */
 
 #include <cstdio>
+#include <iostream>
 
-int size_of(int A[]) {
-    printf("%d\n", sizeof(A));
+void size_of(int A[]) {
+    printf("%d\n", A);
 }
 
 int main(int argc, char *argv[]) {
@@ -30,7 +31,7 @@ int main(int argc, char *argv[]) {
     // any element in an array, or value
     printf("%d\n", A + 1);
     printf("%d\n", *(A + 1));
-    // this technique is useful when we want iterate through an arrays.
+    // this technique is useful when we want to iterate through arrays.
     // Like well known loops
     for (int i = 0; i < 5; i++) {
         // to get value we can use
@@ -42,6 +43,7 @@ int main(int argc, char *argv[]) {
         // or
         printf("%d\n", A + i);
     }
+    std::cout << A + 1 << std::endl;
 
 
     // When we use sizeof on an array:
@@ -63,5 +65,16 @@ int main(int argc, char *argv[]) {
     // but for real arrays this is different, for real arrays they can behave as pointers when its needed,
     // its called 'array-to-pointer decay' when arrays automatically converted to pointers, and it can be done
     // in most expressions
+
+    int *pA;
+    pA = A; // 'array-to-pointer decay' where A is automatically converted to pointer to first element of array A
+    // this is also called base address
+    printf("%d\n", pA); // prints address of first element in array A
+    printf("%d\n", A);
+
+    // by using base address we can easily modify and access any value in an array
+    // (assuming we know size of it)
+    // we cannot modify base address, meaning smth like A = pA or A = A + 1 wouldnt work
+
     return 0;
 }
